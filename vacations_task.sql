@@ -6,8 +6,8 @@ select
 	,e_second.code as КодСотрудника2
 	,v_second.datebegin as НачалоОтпуска
 	,v_second.dateend as КонецОтпуска
-from vacation v
-	inner join vacation v_second on v_second.id_employee != v.id_employee
+from vacation as v
+	inner join vacation as v_second on v_second.id_employee != v.id_employee
 		and v_second.datebegin >= v.datebegin
 		and v_second.datebegin <= v.dateend
 		/*
