@@ -9,7 +9,7 @@ select
 from vacation v
 	inner join vacation v_second on v_second.id_employee != v.id_employee
 		and v_second.datebegin >= v.datebegin
-        and v_second.datebegin <= v.dateend
+		and v_second.datebegin <= v.dateend
 		/*
 			Когда интервалы начинаются с одинаковых дат, тогда id_employee
 			первого сотрудника должен быть меньше, чем у второго
