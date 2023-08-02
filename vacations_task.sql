@@ -10,6 +10,10 @@ from vacation v
     inner join vacation v_second on v_second.id_employee != v.id_employee
         and v_second.datebegin >= v.datebegin
         and v_second.datebegin <= v.dateend
+		/* 
+			Когда интервалы начинаются с одинаковых дат, тогда id_employee
+			первого сотрудника должен быть меньше, чем у второго
+        */
         and not (v_second.datebegin = v.datebegin and v_second.id_employee < v.id_employee)
     inner join employee as e on e.id = v.id_employee
     inner join employee as e_second on e_second.id = v_second.id_employee
